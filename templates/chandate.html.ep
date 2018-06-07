@@ -1,0 +1,4 @@
+<script>
+    location.href = window.location.origin + window.location.pathname
+        + '/' + window.location.hash.substr(1)
+</script>
