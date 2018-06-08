@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Not Found</title>
+<style>
+    body {
+        width: 800px;
+        margin: 50px auto;
+    }
+</style>
+
+<p>The provided old IRC link did not link to a known chat log line.
+    If you meant to read fresh IRC logs, then you should be using
+    <a href="http://colabti.org/irclogger/irclogger_logs/"
+    >http://colabti.org/irclogger/irclogger_logs/</a> directly.</p>
+
+
+
+
