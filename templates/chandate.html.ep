@@ -1,4 +1,7 @@
 <script>
-    location.href = window.location.origin + window.location.pathname
-        + '/' + window.location.hash.substr(1)
+    if (! window.location.hash.length)
+        location.href = '/404';
+    else
+        location.href = window.location.origin + window.location.pathname
+            + '/' + window.location.hash.substr(1);
 </script>
