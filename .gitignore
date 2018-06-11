@@ -1,4 +1,5 @@
 /hashes.sqlite.db
+/hashes.sqlite.db-*
 /orig.hashes.sqlite.db
 /perl6-ids-hashed
 /hypnotoad.pid
