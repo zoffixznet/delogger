@@ -22,7 +22,7 @@ get '/#chan/#date/#id' => sub {
 
     my $info = $DB->by_id( substr $self->stash('id'), 2 )
         or return;
-    my $to = $self->redirect_to($LOG->find(%$info))
+    my $to = $LOG->find(%$info)
         or return;
     $self->redirect_to($to);
 };
