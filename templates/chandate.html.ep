@@ -1,6 +1,10 @@
 <script>
+    var m;
     if (! window.location.hash.length)
-        location.href = '/404';
+        if (m = window.location.href.match(/([^/]+)\/(\d{4}-\d{2}-\d{2})/))
+            location.href = 'http://colabti.org/irclogger/irclogger_log/' + m[1] + '?date=' + m[2];
+        else
+            location.href = '/404';
     else
         location.href = window.location.origin + window.location.pathname
             + '/' + window.location.hash.substr(1);

@@ -22,7 +22,7 @@ has db => sub {
 
 sub add {
     my ($self, %data) = @_;
-    $self->db->db->delete(hashes => { %data{id} });
+#    $self->db->db->delete(hashes => { %data{id} });
     $self->db->db->insert(hashes => { %data{qw/channel  date  id  hash/} });
 }
 
