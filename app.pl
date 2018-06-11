@@ -12,15 +12,19 @@ my $LOG = Delogger::Log->new;
 get '/#chan/#date' => sub {};
 get '/#chan/#date/#id' => sub {
     my $self = shift;
-    my $info = $DB->by_id( substr $self->stash('id'), 2 );
-    unless ($info) {
-        $self->stash(info =>
-            'Could not find log hash for the given URL. Note: no new logs are'
-            . ' being added. Only historical data exists'
-        );
-        return;
-    }
-    $self->redirect_to($LOG->find(%$info));
+
+    # set error info and simply bail before redirect if we need
+    # to show it to the user.
+    $self->stash(info =>
+        'Could not find log hash for the given URL. Note: no new logs are'
+        . ' being added. Only historical data exists'
+    );
+
+    my $info = $DB->by_id( substr $self->stash('id'), 2 )
+        or return;
+    my $to = $self->redirect_to($LOG->find(%$info))
+        or return;
+    $self->redirect_to($to);
 };
 
 app->start;
